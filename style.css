@@ -1,0 +1,60 @@
+/* UI development seems similar to cooking, the process at least:
+1. you need to gather all of the important ingredients/variables
+2. you use everything which you prepared to assemble/make what you wanted (dish or design in this case) 
+*3. a UX feature might be the arrangment of the dish or the way it should be presented/eaten
+*/
+
+:root {
+    /* dimensions */
+    --width-cont: 736px;
+    --height-cont: 512px;
+    --border-rad: 32px;
+    --box-width: 288px;
+    --box-hieght: 56px;
+    --rect-rad: 12px;
+    --btn-rad: 128px;
+
+    /* colors */
+    --reaction-cl: #FF5555;
+    --memory-cl: #FFB21E;
+    --verbal-cl: #00BB8F;
+    --visual-cl: #1125D6;
+    --main-bg: #ECF2FF;
+    --bg-right: #ffffff;
+    --bg-left: linear-gradient(#7755FF 0%, #6943FF 1%, #2F2CE9);;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-bg);
+}
+
+.container {
+    border: 1px solid black;
+    width: var(--width-cont);
+    height: var(--height-cont);
+    display: flex;
+    border-radius: var(--border-rad);
+}
+
+.left-side {
+    width: 50%;
+    background: var(--bg-left);
+    border-radius: var(--border-rad);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.right-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
