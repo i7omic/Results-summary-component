@@ -4,8 +4,13 @@
 *3. a UX feature might be the arrangment of the dish or the way it should be presented/eaten
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk&family=Open+Sans:wght@300;500;600;700&display=swap');
+
 :root {
-    /* dimensions */
+    /* Font Families */
+    --hanken-grotesk-font: 'Hanken Grotesk';
+
+    /* DESKTOP dimensions */
     --width-cont: 736px;
     --height-cont: 512px;
     --border-rad: 32px;
@@ -13,6 +18,10 @@
     --box-hieght: 56px;
     --rect-rad: 12px;
     --btn-rad: 128px;
+    --cricle-radius: 200px;
+
+    /* MOBILE dimensions */
+    --mob-cricle-radius: 140px;
 
     /* colors */
     --reaction-cl: #FF5555;
@@ -21,7 +30,19 @@
     --visual-cl: #1125D6;
     --main-bg: #ECF2FF;
     --bg-right: #ffffff;
-    --bg-left: linear-gradient(#7755FF 0%, #6943FF 1%, #2F2CE9);;
+    --circle-color-font: #cac9ff;
+    --bg-left: linear-gradient(#7755FF 0%, #6943FF 40%, #2F2CE9);
+    --bg-circle: linear-gradient(#4d21c9 0%, rgba(37, 33, 201,0) 100%);
+    --dark-navy: #303b59;
+    --dark-navy-50: #303b5950;
+    --bg-red: #ff555510;
+    --bg-yellow: #ffb21e10;
+    --bg-green: #00bb8f10;
+    --bg-blue: #1125d610;
+    --txt-red: #ff5555;
+    --txt-yellow: #ffb21e;
+    --txt-green: #00bb8f;
+    --txt-blue: #1125d6;
 }
 
 * {
@@ -32,14 +53,17 @@
 
 body {
     background-color: var(--main-bg);
+    display: flex;
+    height: 100vh;
 }
 
 .container {
-    border: 1px solid black;
+    background-color: #ffffff;
     width: var(--width-cont);
     height: var(--height-cont);
     display: flex;
     border-radius: var(--border-rad);
+    margin: auto;
 }
 
 .left-side {
@@ -52,9 +76,243 @@ body {
     text-align: center;
 }
 
+.result {
+    margin-top: 38px;
+    font-family: var(--hanken-grotesk-font);
+    font-weight: 700;
+    color: var(--circle-color-font);
+    line-height: 32px;
+    font-size: 24px;
+}
+
+.circle {
+    margin-top: 35px;
+    height: var(--cricle-radius);
+    width: var(--cricle-radius);
+    border-radius: 50%;
+    background: var(--bg-circle);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mainNum {
+    font-size: 72px;
+    font-weight: 800;
+    font-family: var(--hanken-grotesk-font);
+    color: #ffffff;
+}
+
+.outOf {
+    font-family: var(--hanken-grotesk-font);
+    color: var(--circle-color-font);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.great {
+    margin-top: 28px;
+    font-family: var(--hanken-grotesk-font);
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 42px;
+}
+
+.info {
+    margin-top: 14px;
+    width: 260px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: var(--hanken-grotesk-font);
+    color: var(--circle-color-font);
+}
+
+
 .right-side {
     width: 50%;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+}
+
+.summary {
+    margin-top: 38px;
+    margin-left: 40px;
+    font-family: var(--hanken-grotesk-font);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    color: var(--dark-navy);
+}
+
+li {  
+    list-style: none;
+    font-family: var(--hanken-grotesk-font);
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    border-radius: 12px;
+    padding: 17px;
+}
+
+ul {
+    margin-left: 40px;
+    width: 288px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 26px;
+}
+
+.img-txt {
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+ul li .img-txt img {
+    margin-right: 12px;
+}
+
+.reaction {
+    background-color: var(--bg-red);
+    color: var(--txt-red);
+}
+
+.memory {
+    background-color: var(--bg-yellow);
+    color: var(--txt-yellow);
+}
+
+.verbal {
+    background-color: var(--bg-green);
+    color: var(--txt-green);
+}
+
+.visual {
+    background-color: var(--bg-blue);
+    color: var(--txt-blue);
+}
+
+span {
+    color: var(--dark-navy);
+}
+
+ul li {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+ul li p {
+    color: var(--dark-navy-50);
+    font-weight: 700;
+}
+
+.btn {
+    margin-top: 43px;
+    margin-left: 40px;
+    width: 288px;
+    height: 56px;
+    border-radius: 128px;
+    background-color: var(--dark-navy);
+    color: #ffffff;
+    font-size: 18px;
+    font-family: var(--hanken-grotesk-font);
+    font-weight: 700;
+    line-height: 24px;
+}
+
+
+@media only screen and (max-width: 380px) {
+    .container {
+        flex-direction: column;
+        margin: 0;
+        height: 100vh;
+        border-radius: unset;
+    }
+    
+    .left-side {
+        width: 100%;
+        border-radius: 0 0 var(--border-rad) var(--border-rad);
+        padding-bottom: 40px;
+    }
+
+    .result {
+        margin-top: 24px;
+        font-size: 18px;
+    }
+
+    .circle {
+        margin-top: 24px;
+        width: var(--mob-cricle-radius);
+        height: var(--mob-cricle-radius);
+    }
+
+    .mainNum {
+        font-size: 56px;
+    }
+
+    .outOf {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .great {
+        margin-top: 24px;
+        font-size: 24px;
+    }
+
+    .info {
+        width: 295px;
+        margin-top: unset;
+        line-height: 20px;
+    }
+
+    .right-side{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .summary {
+        position: relative;
+        transform: translateX(-115px);
+        font-size: 18px;
+        margin-top: 24px;
+        margin-left: unset;
+        line-height: 24px;
+    }
+
+    /* li {
+
+    } */
+
+    ul {
+        width: 100vw;
+        margin-left: unset;
+        display: flex;
+        align-items: center;
+        margin-top: 24px;
+    }
+
+    .img-txt {
+        font-size: 16px;
+    }
+
+    ul li {
+        font-size: 16px;
+        width: 315px;
+    }
+
+    .btn {
+        margin-top: 24px;
+        margin-left: unset;
+        width: 315px;
+        margin-bottom: 30px;
+    }
 }
