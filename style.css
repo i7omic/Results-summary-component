@@ -54,7 +54,7 @@
 body {
     background-color: var(--main-bg);
     display: flex;
-    /* height: 100vh; */
+    height: 100vh;
 }
 
 .container {
